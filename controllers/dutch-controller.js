@@ -3,7 +3,10 @@ const Controller = ()=>{
 };
 
 Controller.home = (req, res, next)=>{
-    res.send('este será el home');
+    let locals = {
+        title: "Holandeses en Madrid"
+    }
+    res.render('index', locals);
 }
 
 Controller.shops = (req, res, next)=>{
