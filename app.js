@@ -21,7 +21,7 @@ app.use(session({
 //app.set('trust proxy', 1);     //produccion
 app.use(morgan('dev'));
 app.use(express.static('public'));
-//app.use(routes);
+app.use(routes);
 //app.use(auth);
 //app.use(errors.https404);
 
