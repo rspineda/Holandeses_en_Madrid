@@ -10,32 +10,61 @@ Controller.home = (req, res, next)=>{
 }
 
 Controller.shops = (req, res, next)=>{
-    res.send('aqui irá shops');
+    let locals = {
+        title: "Tiendas holandesas en Madrid"
+    }
+    res.render('shops', locals);
 }
 
 Controller.education = (req, res, nex)=>{
-    res.send('aquí irá education');
+    let locals = {
+        title: "Educación holandesa en Madrid"
+    }
+    res.render('education', locals);
 }
 
 Controller.documents = (req, res, nex)=>{
-    res.send('aquí irá documents');
+    let locals = {
+        title: "Documentación española en Madrid"
+    }
+    res.render('documents', locals);
 }
 
 Controller.secondHand = (req, res, nex)=>{
-    res.send('aquí irá second-hand');
+    let locals = {
+        title: "Tiendas de segunda mano en Madrid"
+    }
+    res.render('second-hand', locals);
 }
 
 Controller.cityTrip = (req, res, nex)=>{
-    res.send('aquí irá cityTrip');
+    let locals = {
+        title: "City-trip en Madrid"
+    }
+    res.render('city-trip', locals);
 }
 
 Controller.goingOut = (req, res, nex)=>{
-    res.send('aquí irá goingOut');
+    let locals = {
+        title: "Going-out en Madrid"
+    }
+    res.render('going-out', locals);
 }
 
-Controller.groups = (req, res, nex)=>{
-    res.send('aquí se accederá a groups');
+Controller.groupsLogIn = (req, res, nex)=>{
+    let locals = {
+        title: "Holandeses en las zonas de Madrid (log In)"
+    }
+    res.render('groups-logIn', locals);
 }
+
+Controller.groupsSignUp = (req, res, nex)=>{
+    let locals = {
+        title: "Holandeses en las zonas de Madrid (Sign Up)"
+    }
+    res.render('groups-signUp', locals);
+}
+
 
 module.exports = Controller;
 

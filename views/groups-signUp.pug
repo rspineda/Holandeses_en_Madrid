@@ -1,0 +1,55 @@
+extends layout
+
+block content
+    .contenido
+        form.form(method="post", action="/groups-signup")
+            fieldset
+                div
+                    label(for="username") Nombre de usuario:
+                    input#username(type="text", name="username", required)
+                div
+                    label(for="password") Password:
+                    input#password(type="password", name="password", required)
+                div
+                    label(for="email") email:
+                    input#password(type="password", name="password", required)
+                div
+                    label(for="municipio") Municipio de Madrid en el que reside:
+                    select 
+                        option(value="Alcalá de Henares") Alcalá de Henares
+                        option(value="Alcobendas") Alcobendas
+                        option(value="Alcorcón") Alcorcón
+                        option(value="Aranjuez") Aranjuez
+                        option(value="Arganda del Rey") Arganda del Rey
+                        option(value="Arroyomolinos") Arroyomolinos
+                        option(value="Arroyomolinos") Boadilla del Monte
+                        option(value="Brunete") Brunete
+                        option(value="Cercedilla") Cercedilla
+                        option(value="Ciempozuelos") Ciempozuelos
+                        option(value="Collado Villalba") Collado Villalba
+                        option(value="Colmenar Viejo") Colmenar Viejo
+                        option(value="Coslada") Coslada
+                        option(value="El Escorial") El Escorial
+                        option(value="Fuenlabrada") Fuenlabrada
+                        option(value="Getafe") Getafe
+                        option(value="Leganés") Leganés
+                        option(value="Majadahonda") Majadahonda
+                        option(value="Manzanares el Real") Manzanares el Real
+                        option(value="Móstoles") Móstoles
+                        option(value="Navacerrada") Navacerrada
+                        option(value="Navalcarnero") Navalcarnero
+                        option(value="Parla") Parla
+                        option(value="Pinto") Pinto
+                        option(value="Pozuelo de Alarcón") Pozuelo de Alarcón
+                        option(value="Rascafría") Rascafría
+                        option(value="Rivas-Vaciamadrid") Rivas-Vaciamadrid
+                        option(value="Las Rozas") Las Rozas
+                        option(value="San Sebastian de los Reyes") San Sebastian de los Reyes
+                        option(value="Torrejón de Ardoz") Torrejón de Ardoz
+                        option(value="Tres Cantos") Tres Cantos
+                        option(value="Valdemoro") Valdemoro
+                div
+                    input(type="submit", value="Registrarse")
+            a(href="/login") Login con cuenta ya registrada
+
+    a(href="/") Regresar al home
