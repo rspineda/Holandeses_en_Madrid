@@ -22,7 +22,7 @@ app.use(session({
 app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(routes);
-//app.use(auth);
+app.use(auth);
 //app.use(errors.https404);
 
 module.exports = app;

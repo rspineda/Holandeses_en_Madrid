@@ -10,8 +10,6 @@ router
     .get('/second-hand', controller.secondHand)
     .get('/city-trip', controller.cityTrip)
     .get('/going-out', controller.goingOut)
-    .get('/groups-login', controller.groupsLogIn)
-    .get('/groups-signup', controller.groupsSignUp)
-
-
+    
+    
 module.exports = router;

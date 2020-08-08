@@ -12,10 +12,10 @@ block content
                     input#password(type="password", name="password", required)
                 div
                     label(for="email") email:
-                    input#password(type="password", name="password", required)
+                    input#password(type="text", name="email", required)
                 div
                     label(for="municipio") Municipio de Madrid en el que reside:
-                    select 
+                    select#municipality(name="municipality")
                         option(value="Alcalá de Henares") Alcalá de Henares
                         option(value="Alcobendas") Alcobendas
                         option(value="Alcorcón") Alcorcón
@@ -48,6 +48,9 @@ block content
                         option(value="Torrejón de Ardoz") Torrejón de Ardoz
                         option(value="Tres Cantos") Tres Cantos
                         option(value="Valdemoro") Valdemoro
+                div
+                    label(for="otroMunicipio") Si reside en otro municipio que no aparece en la lista, escriba cual es:
+                    input#otromunicipio(type="text", name="othermunicipality")
                 div
                     input(type="submit", value="Registrarse")
             a(href="/login") Login con cuenta ya registrada

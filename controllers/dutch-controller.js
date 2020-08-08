@@ -51,19 +51,6 @@ Controller.goingOut = (req, res, nex)=>{
     res.render('going-out', locals);
 }
 
-Controller.groupsLogIn = (req, res, nex)=>{
-    let locals = {
-        title: "Holandeses en las zonas de Madrid (log In)"
-    }
-    res.render('groups-logIn', locals);
-}
-
-Controller.groupsSignUp = (req, res, nex)=>{
-    let locals = {
-        title: "Holandeses en las zonas de Madrid (Sign Up)"
-    }
-    res.render('groups-signUp', locals);
-}
 
 
 module.exports = Controller;
