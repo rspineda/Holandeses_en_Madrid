@@ -5,5 +5,42 @@ html(lang="es")
         meta(name="viewport", content="width=device-width,initial-scale=1")
         title= title
         link(rel="stylesheet", href="./style.css")
+        link(rel="stylesheet", href="./bootstrap.css")
     body
+
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+            a.navbar-brand(href='#') Holandeses en Madrid
+            button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                span.navbar-toggler-icon    
+
+            #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                    li.nav-item.active
+                        a.nav-link(href='#') Home 
+                            span.sr-only (current)
+                    li.nav-item  
+                        a.nav-link(href='#') Shops
+                    li.nav-item  
+                        a.nav-link(href='#') Education
+                    li.nav-item  
+                        a.nav-link(href='#') Documents
+                    li.nav-item  
+                        a.nav-link(href='#') Second hand
+                    li.nav-item  
+                        a.nav-link(href='#') City trip
+                    li.nav-item  
+                        a.nav-link(href='#') Going out
+                    li.nav-item.dropdown
+                        a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Groups
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(href='#') Log in
+                            a.dropdown-item(href='#') Sign up
+                            .dropdown-divider
+                            a.dropdown-item(href='#') Something else here
+                    li.nav-item
+                        a.nav-link.disabled(href='#' tabindex='-1' aria-disabled='true') Disabled
+                form.form-inline.my-2.my-lg-0
+                    input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search')
+                    button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+
         block content
