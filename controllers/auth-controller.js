@@ -31,10 +31,10 @@ ControllerAuth.groupsSignUpPost = (req, res, next)=>{
 
     console.log('el nuevo usuario registrado: ',user)
 
-    //authModel.setUser(user, (doc)=>{
-        //console.log('registro del usuario en mongo, correcto');
-        //res.redirect(`/?message=El usuario ${user.username} ha sido registrado correctamente`);
-    //})
+    authModel.setUser(user, (doc)=>{
+        console.log('logra pasar a mongo!!!');
+        res.redirect(`/?message=El usuario ${user.username} ha sido registrado correctamente`);
+    })
 }
 
 
