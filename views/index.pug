@@ -1,21 +1,31 @@
 extends layout
 
 block content
-    //-
-        div#navigation
-            ul
-                li 
-                    a(href="/") home
-                li 
-                    a(href="/shops") shops
-                li 
-                    a(href="/education") education
-                li 
-                    a(href="/documents") documents
-                li 
-                    a(href="second-hand") second hand
-                li 
-                    a(href="/city-trip") city trip --> going out
-                li 
-                    a(href="groups-login") groups
-            
+
+        header.bodyImage(style='\
+        --bg-url: url(dist/img/gran-via2.jpg);\
+        --bg-attach: fixed;\
+        --bg-size: cover;\
+        --bg-x: center;\
+        --bg-y: center;\
+        ')
+    
+                    
+                        //-
+                            div#navigation
+                                ul
+                                    li 
+                                        a(href="/") home
+                                    li 
+                                        a(href="/shops") shops
+                                    li 
+                                        a(href="/education") education
+                                    li 
+                                        a(href="/documents") documents
+                                    li 
+                                        a(href="second-hand") second hand
+                                    li 
+                                        a(href="/city-trip") city trip --> going out
+                                    li 
+                                        a(href="groups-login") groups
+                                

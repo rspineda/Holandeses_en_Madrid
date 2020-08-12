@@ -1,6 +1,16 @@
+
 .enl-nav {
     color: orange !important;
 }
 .enl-nav:hover{
     color: orangered !important;
 }
+
+.bodyImage {
+  width: 100%;
+  min-height: 100vh;
+  background-image: var(--bg-url);
+  background-attachment: var(--bg-attach);
+  background-size: var(--bg-size);
+  background-position-x: var(--bg-x);
+  background-position-y: var(--bg-y);
