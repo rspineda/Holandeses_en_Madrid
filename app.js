@@ -8,6 +8,8 @@ const express = require('express'),
         errors = require('./middlewares/errors'),
         app = express();
 
+
+
 app.set('view engine', 'pug');
 app.use(helmet());
 app.use(bodyParser.json());
@@ -24,6 +26,12 @@ app.use(express.static('public'));
 app.use(routes);
 app.use(auth);
 //app.use(errors.https404);
+
+//bootstrap
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
+
 
 module.exports = app;
 

@@ -1,0 +1,6 @@
+.enl-nav {
+    color: orange !important;
+}
+.enl-nav:hover{
+    color: orangered !important;
+}

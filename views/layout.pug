@@ -2,45 +2,68 @@ doctype html
 html(lang="es")
     head
         meta(charset="utf-8")
-        meta(name="viewport", content="width=device-width,initial-scale=1")
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
         title= title
-        link(rel="stylesheet", href="./style.css")
-        link(rel="stylesheet", href="./bootstrap.css")
+        link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.1/css/all.css' integrity='sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP' crossorigin='anonymous')
+        link(rel='stylesheet' href='/dist/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet' href='style.css')
+
     body
 
         nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-            a.navbar-brand(href='#') Holandeses en Madrid
+            a.navbar-brand(href='/') Holandeses en Madrid
             button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-                span.navbar-toggler-icon    
+                span.navbar-toggler-icon
 
             #navbarSupportedContent.collapse.navbar-collapse
                 ul.navbar-nav.mr-auto
                     li.nav-item.active
-                        a.nav-link(href='#') Home 
-                            span.sr-only (current)
-                    li.nav-item  
-                        a.nav-link(href='#') Shops
-                    li.nav-item  
-                        a.nav-link(href='#') Education
-                    li.nav-item  
-                        a.nav-link(href='#') Documents
-                    li.nav-item  
-                        a.nav-link(href='#') Second hand
-                    li.nav-item  
-                        a.nav-link(href='#') City trip
-                    li.nav-item  
-                        a.nav-link(href='#') Going out
+                        a.nav-link.enl-nav(href='/') Home 
+                            //-span.sr-only (current)
+                    li.nav-item
+                        a.nav-link.enl-nav(href='/shops') Shops
+                    li.nav-item
+                        a.nav-link.enl-nav(href='/education') Education
+                    li.nav-item
+                        a.nav-link.enl-nav(href='/documents') Documents
+                    li.nav-item
+                        a.nav-link.enl-nav(href='/second-hand') Second-hand
+                    li.nav-item
+                        a.nav-link.enl-nav(href='/city-trip') City trip
                     li.nav-item.dropdown
-                        a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Groups
+                        a#navbarDropdown.nav-link.dropdown-toggle.enl-nav(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Groups
                         .dropdown-menu(aria-labelledby='navbarDropdown')
-                            a.dropdown-item(href='#') Log in
-                            a.dropdown-item(href='#') Sign up
+                            a.dropdown-item(href='/groups-login') Log in
+                            a.dropdown-item(href='/groups-signup') Sign up
                             .dropdown-divider
                             a.dropdown-item(href='#') Something else here
-                    li.nav-item
-                        a.nav-link.disabled(href='#' tabindex='-1' aria-disabled='true') Disabled
                 form.form-inline.my-2.my-lg-0
                     input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search')
                     button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
 
-        block content
+        .container
+            block content
+
+            footer.footer
+                .container
+                    .row
+                        aside.col-12.col-lg-6.order-lg-1
+                            ul.list-unstyled.d-flex.justify-content-around.align-items-center.u-flowText.SocialMedia
+                                li
+                                    a(href='https://www.facebook.com/ronald.pinedabarrera' target='blank')
+                                    i.fab.fa-facebook
+                                li
+                                    a(href='https://github.com/rspineda' target='blank')
+                                    i.fab.fa-github
+                                li
+                                    a(href='https://www.linkedin.com/in/ronald-pineda-3920971b3/' target='blank')
+                                    i.fab.fa-linkedin
+                                li
+                                    a(href='' target='blank')
+                                    i.fab.fa-whatsapp
+                        aside.col-12.col-lg-6.d-flex.justify-content-center.justify-content-lg-start.align-items-center
+                            span.Footer-copy &copy; 2020 Copyright
+                                a(href='https://ronaldpineda.tk' target='_blank') @ronaldpineda
+        
+        script(src='/dist/jquery/jquery.js')
+        script(src='/dist/bootstrap/dist/js/bootstrap.bundle.js')
