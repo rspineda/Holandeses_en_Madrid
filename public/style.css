@@ -6,6 +6,15 @@
     color: orangered !important;
 }
 
+.bodyImage > div {
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+  }
+
 .bodyImage {
   width: 100%;
   min-height: 100vh;
@@ -14,3 +23,15 @@
   background-size: var(--bg-size);
   background-position-x: var(--bg-x);
   background-position-y: var(--bg-y);
+}
+
+.bodyImage h2 {
+    padding: 0 1rem;
+    text-align: center;
+    font-family: 'Raleway';
+    font-weight: bold;
+    font-size: 5vw;
+    color: orange;
+  }
+  
+  .bodyImage span { display: block; }
