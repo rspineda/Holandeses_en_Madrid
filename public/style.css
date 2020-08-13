@@ -1,3 +1,6 @@
+body{
+  font-family: 'Barlow Condensed' !important;
+}
 
 .enl-nav {
     color: orange !important;
@@ -28,10 +31,18 @@
 .bodyImage h2 {
     padding: 0 1rem;
     text-align: center;
-    font-family: 'Raleway';
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: bold;
     font-size: 5vw;
     color: orange;
   }
   
-  .bodyImage span { display: block; }
+.bodyImage span { display: block; }
+
+.form-control{
+  border-color: orange;
+}
+
+.form-group .btn {
+  font-weight: bold;
+}
