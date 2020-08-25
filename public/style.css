@@ -46,3 +46,13 @@ body{
 .form-group .btn {
   font-weight: bold;
 }
+
+
+/* for municipalities */
+#map-template{
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  background: orange;
+}

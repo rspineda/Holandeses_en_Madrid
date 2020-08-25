@@ -6,7 +6,8 @@ const express = require('express'),
         routes = require('./routes/dutch-routes'),
         auth = require('./routes/auth-routes'),
         errors = require('./middlewares/errors'),
-        app = express();
+        app = express()
+        path = require('path')
 
 
 
@@ -22,15 +23,10 @@ app.use(session({
 }))
 //app.set('trust proxy', 1);     //produccion
 app.use(morgan('dev'));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname,'public')));
 app.use(routes);
 app.use(auth);
 //app.use(errors.https404);
-
-//bootstrap
-app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
-app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
-app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
 
 
 module.exports = app;
