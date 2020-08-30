@@ -1,6 +1,5 @@
 const authModel = require('../models/user-model'),
         errors = require('../middlewares/errors');
-        map = require('../public/script');
 
 
 const ControllerAuth = ()=>{
@@ -35,14 +34,17 @@ ControllerAuth.groupsSignUpPost = (req, res, next)=>{
     authModel.setUser(user, (doc)=>{
         console.log('logra pasar a mongo!!!');
         res.redirect(`/?message=El usuario ${user.username} ha sido registrado correctamente`);
-    })
+    });
 }
 
 ControllerAuth.municipalities = (req, res, next)=>{
-    let locals = {
-        title: "Municipios de Madrid con holandeses"
-    }
-    res.render('municipalities', locals);
+    authModel.municipalities((docs)=>{
+        let locals = {
+            title: "Municipios de Madrid con holandeses",
+            data: docs
+        }
+        res.render('municipalities', locals);
+    });  
 }
 
 

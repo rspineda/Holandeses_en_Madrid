@@ -15,4 +15,11 @@ Auth.setUser = (doc,cb)=>{
     })
 };
 
+Auth.municipalities = (cb)=>{
+    authModel.find({}).exec((err, docs)=>{
+        if(err) throw err;
+        cb(docs);
+    });
+}
+
 module.exports = Auth;

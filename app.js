@@ -6,13 +6,18 @@ const express = require('express'),
         routes = require('./routes/dutch-routes'),
         auth = require('./routes/auth-routes'),
         errors = require('./middlewares/errors'),
-        app = express()
-        path = require('path')
+        app = express(),
+        path = require('path');
 
 
 
 app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
 app.use(helmet());
+app.use(function(req, res, next) {
+    res.setHeader("Content-Security-Policy", "img-src 'self' data: https://*");
+    return next();
+});
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(session({
