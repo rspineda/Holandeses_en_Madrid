@@ -8,12 +8,17 @@ block content
             h2 Listado de todos los municipios madrileños con holandeses
             -if(data.length)
                 table.table
-                    
+                    thead
+                        tr
+                            th Usuario
+                            th Municipio
                     each x in data
                         tr
                             td=x.username
                             td=x.municipality
         #map-template
+        script(src='/dist/leaflet/leaflet.js')
+        script(src='/js/script.js')
 
     
 

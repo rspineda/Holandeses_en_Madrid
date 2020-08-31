@@ -5,7 +5,7 @@ const userSchema = new Schema({
     username: "string",
     password: "string",
     email: "string",
-    minicipality: "string",
+    municipality: "string",
     othermunicipality: "string"
 });
 
