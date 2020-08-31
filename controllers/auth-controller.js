@@ -45,6 +45,8 @@ ControllerAuth.municipalities = (req, res, next)=>{
             data: docs
         }
         res.render('municipalities', locals);
+
+        
     });  
 }
 
