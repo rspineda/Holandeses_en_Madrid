@@ -14,7 +14,7 @@ block content
                             th Usuarios Registrados
                     each x in data     
                         tr
-                            td=x._id
+                            td.municipality=x._id
                             td=x.total
         #map-template
         script(src='/dist/leaflet/leaflet.js')
