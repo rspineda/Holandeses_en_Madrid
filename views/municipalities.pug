@@ -10,12 +10,12 @@ block content
                 table.table
                     thead
                         tr
-                            th Usuario
                             th Municipio
-                    each x in data
+                            th Usuarios Registrados
+                    each x in data     
                         tr
-                            td=x.username
-                            td=x.municipality
+                            td=x._id
+                            td=x.total
         #map-template
         script(src='/dist/leaflet/leaflet.js')
         script(src='/js/script.js')

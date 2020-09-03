@@ -39,14 +39,13 @@ ControllerAuth.groupsSignUpPost = (req, res, next)=>{
 }
 
 ControllerAuth.municipalities = (req, res, next)=>{
+
     authModel.municipalities((docs)=>{
         let locals = {
             title: "Municipios de Madrid con holandeses",
             data: docs
         }
         res.render('municipalities', locals);
-
-        
     });  
 }
 
