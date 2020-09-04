@@ -14,8 +14,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
         }).addTo(map);
 
 //funcion para agregar los marcadores
-function addPopUp(x,y){
-    L.marker(x).bindPopup(`${y}`).addTo(map);
+function addPopUp(x,y,z){
+    L.marker(x).bindPopup(`${y} | ${z}usuarios`).addTo(map);
 }
 
 //funcion para encontrar los municipios registrados en BBDD y emparejarlos con sus coordenadas:
@@ -29,25 +29,34 @@ function coordenadas(){
 
     }
    
-    //municipios registrados en la base de datos:
-    var values = []
+    //municipios  registrados en la base de datos y numero de usarios en cada municipio:
+    var values = [] //municipios
+    var users = [] //numero de usuarios
     const longitud = document.getElementsByClassName("municipality").length
     for (i=0; i<longitud; i++){
         const muni = document.getElementsByClassName("municipality")[i].innerHTML;
+        const usersNumber = document.getElementsByClassName("users")[i].innerHTML;
             values.push(muni);
+            users.push(usersNumber);
     }
     
+    
+
     //coincidencia con la lista de todos los municipios
     for(y in coordenadas){
-        let x = coordenadas[y];
-
+        let x = coordenadas[y]; //array con latitud y longitud de cada municipio registrado
+        let position = values.indexOf(y); //saco el indice del array de municipios registrados para utilizarlo enel array de numero de usuarios, ya que el indice coincide
+        let z = users[position]; //saco el numero de usuarios en cada municipio a partir del indice
+        
         if(values.includes(y)){
-            addPopUp(x,y); //le agrego el marker
+            addPopUp(x,y,z); //le agrego el marker 
         }
     }
 
+     
+
 }
-setTimeout(coordenadas,3000); //para que le de tiempo a renderizar los municipios
+setTimeout(coordenadas,2000); //para que le de tiempo a renderizar los municipios
 
 
 
