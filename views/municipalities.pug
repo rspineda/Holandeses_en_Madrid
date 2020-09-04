@@ -12,10 +12,13 @@ block content
                         tr
                             th Municipio
                             th Usuarios Registrados
+                            th Enviar mensaje al grupo
                     each x in data     
                         tr
                             td.municipality=x._id
                             td.users=x.total
+                            td
+                                a(href=`/messages/${x._id}`) Mensaje
         #map-template
         script(src='/dist/leaflet/leaflet.js')
         script(src='/js/script.js')

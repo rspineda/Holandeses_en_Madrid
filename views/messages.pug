@@ -1,0 +1,18 @@
+extends layout
+
+block content
+        br
+        -if(data)
+            .container.mt-5
+                form(method="post", action=`/messages/${data.municipality}`)
+                    fieldset
+                        div.form-group
+                            label(for="username") Username:
+                            input#username.form-control(type="text", name="username", required)
+                        div.form-group
+                            label(for="message") Message:
+                            input#password.form-control(type="password", name="password", required)
+                        div.form-group
+                            input.form-control.btn.btn-lg.bg-primary.text-white(type="submit", value="Send")
+
+                a(href="/") Regresar al home

@@ -50,5 +50,4 @@ ControllerAuth.municipalities = (req, res, next)=>{
 }
 
 
-
 module.exports = ControllerAuth;

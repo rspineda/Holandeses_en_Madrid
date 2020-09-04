@@ -5,6 +5,7 @@ const express = require('express'),
         helmet = require('helmet'),
         routes = require('./routes/dutch-routes'),
         auth = require('./routes/auth-routes'),
+        messages = require('./routes/message-routes'),
         errors = require('./middlewares/errors'),
         app = express(),
         path = require('path');
@@ -31,6 +32,7 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname,'public')));
 app.use(routes);
 app.use(auth);
+app.use(messages);
 //app.use(errors.https404);
 
 
