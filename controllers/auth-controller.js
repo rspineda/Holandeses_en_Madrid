@@ -21,7 +21,6 @@ ControllerAuth.groupsSignUp = (req, res, next)=>{
 }
 
 ControllerAuth.groupsSignUpPost = (req, res, next)=>{
-    console.log("todo: ",req.body)
     const user = {
         username: req.body.username,
         password: req.body.password,

@@ -14,7 +14,14 @@ ControllerMessages.messagesGet = (req, res, next) => {
 
 
 ControllerMessages.messagesPost = (req, res, next) => {
-    
+    const message = {
+        municipality : req.body.municipality,
+        username : req.body.username,
+        email : req.body.email,
+        message : req.body.message
+    }
+    //console.log('esto me va a llegar en el messagePost: ',message)
+    messageModel.save(message, ()=>{res.redirect("/municipalities")})
 }
 
 module.exports = ControllerMessages;
