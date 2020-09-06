@@ -6,16 +6,15 @@ const ControllerMessages = ()=>{
 };
 
 ControllerMessages.messagesGet = (req, res, next) => {
-    messageModel.get((docs)=>{
-        let locals = {
-            title: "Mensajes del grupo",
-            //user: req.session.username, //o bien con el email
-            data: docs
-        }
-        res.render('messages.pug',locals)
-    })
+    let locals = {
+        title: "Messages to the group"
+    }
+    res.render('messages', locals)
 }
+
 
 ControllerMessages.messagesPost = (req, res, next) => {
     
 }
+
+module.exports = ControllerMessages;

@@ -4,6 +4,6 @@ const controller = require('../controllers/messages-controller'),
 
 router
     .get('/messages/:municipality', controller.messagesGet)
-    .post('/messages/:municipality', controller.messagesPost)
+    //.post('/messages/:municipality', controller.messagesPost)
 
 module.exports = router;
