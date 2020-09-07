@@ -6,10 +6,17 @@ const ControllerMessages = ()=>{
 };
 
 ControllerMessages.messagesGet = (req, res, next) => {
-    let locals = {
-        title: "Messages to the group"
-    }
-    res.render('messages', locals)
+    const muni = req.params.municipality
+    messageModel.get(muni, (docs)=>{
+        console.log(docs)
+        let locals = {
+            title: "Messages to the group",
+            municipality: muni,
+            data: docs
+        }
+        res.render('messages', locals)
+    })
+    
 }
 
 

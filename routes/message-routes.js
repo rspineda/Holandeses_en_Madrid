@@ -3,7 +3,7 @@ const controller = require('../controllers/messages-controller'),
     router = express.Router();
 
 router
-    .get('/messages/:municipality', controller.messagesGet)
-    .post('/messages/:municipality', controller.messagesPost)
+    .get('/municipalities/messages/:municipality', controller.messagesGet)
+    .post('/municipalities/messages/:municipality', controller.messagesPost)
 
 module.exports = router;

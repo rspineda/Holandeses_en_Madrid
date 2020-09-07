@@ -3,8 +3,7 @@ extends layout
 block content
         br
         .container.mt-5
-            - var municipality = 'Rivas-Vaciamadrid'
-            form(method="post", action=`/messages/${municipality}`)
+            form(method="post", action=`/municipalities/messages/${municipality}`)
                 fieldset
                     div.form-group
                         label(for="municipality") Municipality:
@@ -21,5 +20,20 @@ block content
                         textarea#message.form-control(name="message", cols="40", rows="4" placeholder=`Detalle su mensaje para el grupo de ${municipality}`)
                     div.form-group
                         input.form-control.btn.btn-lg.bg-primary.text-white(type="submit", value="Send")
+
+        .container
+            -if(data.length)
+                h2 Mensaje previos al grupo:
+                table.table
+                    thead
+                        tr
+                            th User
+                            th Message
+                    each x in data     
+                        tr
+                            td.user=x.username
+                            td.message=x.message
+            -else 
+                p Ningun mensaje previo en el grupo
 
             a(href="/") Regresar al home
