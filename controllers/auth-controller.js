@@ -1,5 +1,6 @@
 const authModel = require('../models/user-model'),
-        errors = require('../middlewares/errors');
+        errors = require('../middlewares/errors'),
+        jwt = require('jsonwebtoken');
 
 
 const ControllerAuth = ()=>{
@@ -13,6 +14,7 @@ ControllerAuth.groupsLogIn = (req, res, next)=>{
     res.render('groups-logIn', locals);
 }
 
+
 ControllerAuth.groupsLogInPost = (req, res)=>{
 
     console.log("entran así los datos del cliente: ", req.body);
@@ -22,8 +24,16 @@ ControllerAuth.groupsLogInPost = (req, res)=>{
         password: req.body.password
     }
 
-    authModel.findUser(user, ()=>{
-        res.json("peticion procesada");
+    authModel.findUser(user, (result, authenticated, dbUser)=>{
+        const message = result; 
+        const token =  (authenticated == true) ? jwt.sign({dbUser}, req.app.get('secretKey')) : null;
+        res.json({
+            status: "peticion procesada",
+            result: message,
+            token : token
+        });
+        
+
     });
 }
 

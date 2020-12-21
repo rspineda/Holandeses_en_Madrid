@@ -8,12 +8,14 @@ const express = require('express'),
         messages = require('./routes/message-routes'),
         errors = require('./middlewares/errors'),
         app = express(),
-        path = require('path');
+        path = require('path'),
+        config = require('./config');
 
 
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
+app.set('secretKey', config.secret); //clave privada para el JWT
 app.use(helmet());
 app.use(function(req, res, next) {
     res.setHeader("Content-Security-Policy", "img-src 'self' data: https://*");

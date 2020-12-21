@@ -2,6 +2,7 @@ const authModel = require('./user-schema');
 const { MongooseDocument } = require('mongoose');
 
 
+
 const Auth = ()=>{
 
 };
@@ -46,16 +47,21 @@ Auth.findUser = (user,cb)=>{
     }).exec((err, dbUser)=>{
         if(err) throw err;
         if(!dbUser) {
-            cb()
-            console.log("Usuario no encontrado")
+            let result = "Usuario no encontrado";
+            let authenticated = false;
+            //console.log("Usuario no encontrado");
+            cb(result, authenticated);
         }else if(dbUser){
             if(dbUser.password != user.password){
-                cb()
-                console.log("Contraseña incorrecta")
+                let result = "Contraseña incorrecta";
+                let authenticated = false
+                //console.log("Contraseña incorrecta");
+                cb(result,authenticated);
             }else{
-                cb()
-                //const token = ;
-                console.log("Usuario y contraseña conrrecta")
+                let authenticated = true;
+                let result = "Usuario y contraseña correcta";
+                //console.log("Usuario y contraseña conrrecta");
+                cb(result, authenticated, dbUser);
             }
         }
     })
