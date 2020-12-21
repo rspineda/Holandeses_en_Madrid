@@ -1,6 +1,7 @@
 const authModel = require('./user-schema');
 const { MongooseDocument } = require('mongoose');
 
+
 const Auth = ()=>{
 
 };
@@ -37,6 +38,27 @@ Auth.municipalities = (cb)=>{
         //console.log("el resultado de la query: ", doc);
         //console.log("numero de repeticiones", doc.length);
     //})
+}
+
+Auth.findUser = (user,cb)=>{
+    authModel.findOne({
+        email: user.email       
+    }).exec((err, dbUser)=>{
+        if(err) throw err;
+        if(!dbUser) {
+            cb()
+            console.log("Usuario no encontrado")
+        }else if(dbUser){
+            if(dbUser.password != user.password){
+                cb()
+                console.log("Contraseña incorrecta")
+            }else{
+                cb()
+                //const token = ;
+                console.log("Usuario y contraseña conrrecta")
+            }
+        }
+    })
 }
 
 module.exports = Auth;

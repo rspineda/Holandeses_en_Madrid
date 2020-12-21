@@ -13,6 +13,21 @@ ControllerAuth.groupsLogIn = (req, res, next)=>{
     res.render('groups-logIn', locals);
 }
 
+ControllerAuth.groupsLogInPost = (req, res)=>{
+
+    console.log("entran así los datos del cliente: ", req.body);
+
+    const user = {
+        email: req.body.email,
+        password: req.body.password
+    }
+
+    authModel.findUser(user, ()=>{
+        res.json("peticion procesada");
+    });
+}
+
+
 ControllerAuth.groupsSignUp = (req, res, next)=>{
     let locals = {
         title: "Holandeses en las zonas de Madrid (Sign Up)"
