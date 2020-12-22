@@ -27,13 +27,19 @@ ControllerAuth.groupsLogInPost = (req, res)=>{
     authModel.findUser(user, (result, authenticated, dbUser)=>{
         const message = result; 
         const token =  (authenticated == true) ? jwt.sign({dbUser}, req.app.get('secretKey')) : null;
+        /*
         res.json({
             status: "peticion procesada",
             result: message,
             token : token
         });
-        
-
+        */
+        const authResult = {
+             message : message,
+             token : token,
+             result : "petición procesada"
+        }
+        res.render('groups-login-ok', authResult)   
     });
 }
 

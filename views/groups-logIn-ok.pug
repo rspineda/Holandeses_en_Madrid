@@ -1,0 +1,23 @@
+extends layout
+
+block content
+        br
+        .container.mt-5
+            
+            form(method="get", action="/municipalities")
+                fieldset
+    
+                    div.form-group
+                        label(for="municipality") Status:
+                        input.form-control(type="text", name="status", value=`${status}` disabled)
+                        input#username.form-control(type="hidden", name="municipality", value=`${status}`)
+                        label(for="municipality") Result:
+                        input.form-control(type="text", name="result", value=`${result}` disabled)
+                        input#username.form-control(type="hidden", name="result", value=`${result}`)
+                        label(for="token") token:
+                        input.form-control(type="text", name="token", value=`${token}` disabled)
+                        input#username.form-control(type="hidden", name="token", value=`${token}`)
+                    div.form-group
+                        input.form-control.btn.btn-lg.bg-primary.text-white(type="submit", value="Ver mapas")
+
+            a(href="/") Regresar al home
