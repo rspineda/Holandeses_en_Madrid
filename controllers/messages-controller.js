@@ -1,5 +1,5 @@
-const messageModel = require('../models/message-model'),
-    errors = require('../middlewares/errors');
+const messageModel = require('../models/message-model');
+    //errors = require('../middlewares/errors');
 
 const ControllerMessages = ()=>{
 

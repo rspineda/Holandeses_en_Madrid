@@ -1,5 +1,5 @@
 const authModel = require('../models/user-model'),
-        errors = require('../middlewares/errors'),
+        //errors = require('../middlewares/auth'),
         jwt = require('jsonwebtoken');
 
 
@@ -61,6 +61,7 @@ ControllerAuth.groupsSignUpPost = (req, res, next)=>{
         res.redirect(`/?message=El usuario ${user.username} ha sido registrado correctamente`);
     });
 }
+
 
 ControllerAuth.municipalities = (req, res, next)=>{
 
