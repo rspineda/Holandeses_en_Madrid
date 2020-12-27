@@ -15,11 +15,11 @@ block content
                         input.form-control(type="text", name="result", value=`${result}` disabled)
                         input#result.form-control(type="hidden", name="result", value=`${result}`)
                         label(for="token") token:
-                        input.form-control(type="text", name="token", value=`${token}` disabled)
-                        input#token.form-control(type="hidden", name="token", value=`${token}`)
+                        input#suToken.form-control(type="text", name="token", value=`${token}` disabled)
+                        input.form-control(type="hidden", name="token", value=`${token}`)
                     div.form-group
                         input#seeMaps.form-control.btn.btn-lg.bg-primary.text-white(type="submit", value="Ver mapas")
 
             a(href="/") Regresar al home
 
-        script(src='/js/script2.js')
+        script(src='/js/script-tokenOk.js')

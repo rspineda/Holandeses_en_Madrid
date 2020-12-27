@@ -1,7 +1,7 @@
 document.getElementById("seeMaps").addEventListener('click', ()=>{
-    let token = document.getElementById('token').value;
-    //console.log('el token que voy guardar es:', token);
+    const token =  document.getElementById('suToken').value;
+    console.log('el token que voy guardar es:', token);
 
-    localStorage.setItem(jwt, JSON.stringify(token) );
+    localStorage.setItem('jwt', token );
 
 });
